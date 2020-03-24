@@ -100,7 +100,10 @@ while True:
         if(msg):
             print("Pesan diterima dari COM. ", end="")
             mavudpout.write(msg.get_msgbuf())
+            print(f"MSG ID: {msg.get_msgId()} ", end="")
             print("| Pesan dikirim melalui UDP.")
+        else:
+            print("Menunggu pesan dari COM.")
 
         # if(from_gcs):
         #     msg_ = mavudpin.recv_msg()
